@@ -53,10 +53,10 @@ export function MiniNavbar() {
       className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center
       backdrop-blur-xl
       bg-background/60 border border-border/70 shadow-[0_8px_30px_rgba(0,0,0,0.45)]
-      ${scrolled ? "px-3 py-2 w-auto" : "pl-6 pr-6 py-2.5 w-[calc(100%-1.5rem)] sm:w-auto"}
+      ${scrolled ? "px-3 py-2 w-auto" : "pl-7 pr-8 py-3 w-[calc(100%-1.5rem)] sm:w-auto lg:min-w-[760px]"}
       transition-all duration-300 ease-in-out ${headerShapeClass}`}
     >
-      <div className="flex items-center justify-between w-full gap-x-6 sm:gap-x-8">
+      <div className="flex items-center justify-between w-full gap-x-6 lg:gap-x-8">
         <a href="#top" className="flex items-center gap-2 flex-shrink-0">
           <img
             src={vertxLogo}
@@ -67,7 +67,7 @@ export function MiniNavbar() {
 
         {!scrolled && (
           <>
-            <nav className="hidden md:flex items-center gap-6 text-sm">
+            <nav className="hidden lg:flex flex-1 items-center justify-center gap-6 text-sm">
               {navLinksData.map((link) => (
                 <AnimatedNavLink key={link.href} href={link.href}>
                   {link.label}
@@ -75,7 +75,7 @@ export function MiniNavbar() {
               ))}
             </nav>
 
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden lg:flex items-center justify-end gap-3">
               <a
                 href="#contact"
                 className="relative inline-flex items-center justify-center whitespace-nowrap px-5 py-2 text-xs font-tech tracking-[0.2em] rounded-full
@@ -89,7 +89,7 @@ export function MiniNavbar() {
         )}
 
         <button
-          className={`${scrolled ? "flex" : "md:hidden flex"} items-center justify-center w-8 h-8 text-foreground`}
+          className={`${scrolled ? "flex" : "lg:hidden flex"} items-center justify-center w-8 h-8 text-foreground`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
@@ -106,7 +106,7 @@ export function MiniNavbar() {
       </div>
 
       <div
-        className={`${scrolled ? "flex" : "md:hidden flex"} flex-col items-center w-full transition-all ease-in-out duration-300 overflow-hidden
+        className={`${scrolled ? "flex" : "lg:hidden flex"} flex-col items-center w-full transition-all ease-in-out duration-300 overflow-hidden
           ${isOpen ? "max-h-[500px] opacity-100 pt-4 mt-3 border-t border-border/60" : "max-h-0 opacity-0 pt-0 mt-0"}`}
       >
         <nav className="flex flex-col items-center gap-4 text-base w-full">
